@@ -1,21 +1,13 @@
+#include "./Singleton.h"
+
 #include <iostream>
 
-class Singleton {
-public:
-    static Singleton& getInstance() {
-        static Singleton instance;
-        return instance;
-    }
-
-    Singleton(const Singleton&) = delete;
-    Singleton& operator=(const Singleton&) = delete;
-
-private:
-    Singleton() {}
-};
-
 int main() {
-    Singleton& instance = Singleton::getInstance();
+    auto instance1 = Singleton::getInstance();
+    auto instance2 = Singleton::getInstance();
+
+    std::cout << instance1 << std::endl;
+    std::cout << instance2 << std::endl;
 
     return 0;
 }
