@@ -19,6 +19,14 @@ public:
 
         return _instance;
     }
+
+    static void CleanApp() {
+        if (_instance) {
+            delete _instance;
+        }
+        
+        _instance = nullptr;
+    }
 };
 
 Singleton* Singleton::_instance = nullptr;

@@ -9,5 +9,7 @@ int main() {
     std::cout << instance1 << std::endl;
     std::cout << instance2 << std::endl;
 
+    Singleton::CleanApp();
+
     return 0;
 }
