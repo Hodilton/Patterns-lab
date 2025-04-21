@@ -1,25 +1,43 @@
 #include "./Adapter.h"
-using namespace adapter;
+using namespace adapter_2;
+
+//class Client {
+//private:
+//	IInterface* interface;
+//
+//public:
+//	Client(IInterface* interface) : interface(interface) {}
+//
+//public:
+//	void analizeData(Data& data) {
+//		interface->method(data);
+//	}
+//};
 
 class Client {
 private:
-	IInterface* interface;
+	ExistingClass* interface;
 
 public:
-	Client(IInterface* interface) : interface(interface) {}
+	Client(ExistingClass* interface) : interface(interface) {}
 
-public:
-	void analizeData(Data& data) {
+	void analyzeData(Data& data) {
 		interface->method(data);
 	}
 };
 
 int main() {
+	/*Adapter adapter;
+	Data data = "example";
+
+	Client client(&adapter);
+	client.analizeData(data);*/
+
 	Adapter adapter;
 	Data data = "example";
 
 	Client client(&adapter);
-	client.analizeData(data);
+	client.analyzeData(data);
 
 	return 0;
 }
